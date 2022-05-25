@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Krub:400,700");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background:white;;
+            background-image: url("/static/bg2.jpeg");
+            font-family: "Krub", sans-serif;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .followers {
+            display: flex;
+            width: 200px;
+            background-color: yellow;
+        }
+
+        .card {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 250px;
+            height: 400px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px 5px rgba(0, 0, 0, 0.2);
+            background: #EAE0D6;
+            overflow: hidden;
+        }
+
+        .card .ds-top {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            right: 0;
+            left: 0;
+            width: 300px;
+            height: 80px;
+            background: #ef9765;
+            animation: dsTop 1.5s;
+        }
+
+        .card .avatar-holder {
+            position: absolute;
+            margin: auto;
+            top: 40px;
+            right: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 5px #151515, inset 0 0 0 5px #000000, inset 0 0 0 5px #000000, inset 0 0 0 5px #000000, inset 0 0 0 5px #000000;
+            background: white;
+            overflow: hidden;
+            animation: mvTop 1.5s;
+        }
+
+        .card .avatar-holder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card .name {
+            position: absolute;
+            margin: auto;
+            top: -60px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: inherit;
+            height: 40px;
+            text-align: center;
+            animation: fadeIn 2s ease-in;
+            color: white;
+        }
+
+        .card .name h1 {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .card .name a:hover {
+            text-decoration: underline;
+            color: #ef9765;
+        }
+
+        .card .name .qual {
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            color: white;
+            font-size: .5rem;
+        }
+
+        .card .button {
+            position: absolute;
+            margin: auto;
+            padding: 8px;
+            top: 20px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: inherit;
+            height: 40px;
+            text-align: center;
+            animation: fadeIn 2s ease-in;
+            outline: none;
+            color:white;
+        }
+
+        .card .button a {
+            padding: 5px 20px;
+            border-radius: 10px;
+            color: white;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            font-size: 10px;
+            transition: all 1s;
+        }
+
+        .card .button a:hover {
+            color: white;
+            background: #ef9765;
+        }
+
+        .card .ds-info {
+            position: absolute;
+            margin: auto;
+            top: 120px;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            width: inherit;
+            height: 40px;
+            display: flex;
+            color:white;
+        }
+
+        .card .ds-info .pens,
+        .card .ds-info .projects,
+        .card .ds-info .posts {
+            position: relative;
+            left: -300px;
+            width: calc(250px / 3);
+            text-align: center;
+            color: white;
+            animation: fadeInMove 2s;
+            animation-fill-mode: forwards;
+        }
+
+        .card .ds-info .pens h6,
+        .card .ds-info .projects h6,
+        .card .ds-info .posts h6 {
+            text-transform: uppercase;
+            color: crimson;
+        }
+
+        .card .ds-info .pens p,
+        .card .ds-info .projects p,
+        .card .ds-info .posts p {
+            font-size: 12px;
+        }
+
+        .card .ds-info .ds:nth-of-type(2) {
+            animation-delay: 0.5s;
+        }
+
+        .card .ds-info .ds:nth-of-type(1) {
+            animation-delay: 1s;
+        }
+
+        .card .ds-skill {
+            position: absolute;
+            margin: auto;
+            bottom: 20%;
+            right: 0;
+            left: 0;
+            width: 200px;
+            height: 100px;
+            animation: mvBottom 1.5s;
+        }
+
+        .card .ds-skill h6 {
+            margin-bottom: 5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #ef9765;
+        }
+
+        .card .ds-skill .skill h6 {
+            font-weight: 400;
+            font-size: 8px;
+            letter-spacing: 0.05em;
+            margin: 4px 0;
+            color: white;
+        }
+
+
+
+
+        @keyframes fadeInMove {
+            0% {
+                opacity: 0;
+                left: -300px;
+            }
+
+            100% {
+                opacity: 1;
+                left: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+        @keyframes mvBottom {
+            0% {
+                bottom: -150px;
+            }
+
+            100% {
+                bottom: 20%;
+            }
+        }
+
+        @keyframes mvTop {
+            0% {
+                top: -150px;
+            }
+
+            100% {
+                top: 40px;
+            }
+        }
+
+        @keyframes dsTop {
+            0% {
+                top: -150px;
+            }
+
+            100% {
+                top: 0;
+            }
+        }
+
+        .following {
+            color: white;
+            background: #ef9765;;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+
+        <div class="card">
+            <div class="ds-top"></div>
+            <div class="avatar-holder">
+<!-- *************************************************************************************************************************************************************************************************************** -->
+<!-- *************************************************************************************************************************************************************************************************************** -->
+<!-- *************************************************************************************************************************************************************************************************************** -->
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1820405/profile/profile-512.jpg?1533058950"
+                    alt="Albert Einstein">
+<!-- *************************************************************************************************************************************************************************************************************** -->
+<!-- *************************************************************************************************************************************************************************************************************** -->
+<!-- *************************************************************************************************************************************************************************************************************** -->
+            </div>
+            <div class="name">
+                <h1>Sreekanth</h1>
+                <br>
+                <h2 class="qual">DPM, DM, M.Phill</h2>
+            </div>
+            <div class="ds-skill">
+                <div class="skill html" style="margin-bottom: 1.7rem;">
+                    <h6 style="font-size: 1.3rem;color: #ef9765;">Contact</h6>
+                    <h3 style="font-size: .7rem;color:white; padding-left: 1rem;font-weight: 900;">
+                        contact_doctor@email.com
+                    </h3>
+                </div>
+                <div class="skill css">
+                    <h6 style="font-size: 1.3rem;color: #ef9765;">Address</h6>
+                    <h3 style="font-size: .7rem;color:white; margin-left: 1rem;">
+                        Hospital Address, near by fake address, fake city, fake state, fake country, fake pincode
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const target = {
+            clicked: 0,
+            currentFollowers: 90,
+            btn: document.querySelector("a.btn"),
+            fw: document.querySelector("span.followers")
+        };
+
+        const follow = () => {
+            target.clicked += 1;
+            target.btn.innerHTML = 'Following <i class="fas fa-user-times"></i>';
+
+            if (target.clicked % 2 === 0) {
+                target.currentFollowers -= 1;
+                target.btn.innerHTML = 'Follow <i class="fas fa-user-plus"></i>';
+            }
+            else {
+                target.currentFollowers += 1;
+            }
+
+            target.fw.textContent = target.currentFollowers;
+            target.btn.classList.toggle("following");
+        }
+
+    </script>
+</body>
+
+</html>

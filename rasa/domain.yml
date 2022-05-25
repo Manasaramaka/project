@@ -1,0 +1,43 @@
+intents:
+  - greet
+  - answer1
+  - answer2
+  - answer3
+  - answer4
+  - answer5
+  - answer6
+
+
+actions:
+  - action_predict
+
+
+responses:
+  utter_greet:
+  - text: "Hello, Hope you are doing good. \n Kindly describe how are you feeling today?"
+  
+  utter_question1:
+  - text: "Describe in detail about what you will tell about your situation if your best friend calls you!"
+
+  utter_question2:
+  - text: "Okay, Kindly Describe in detail the key moments of your day."
+
+  utter_question3:
+  - text: "Could you share if over the past few weeks if you’ve been bothered by low feelings, stress, or sadness? "
+
+  utter_question4:
+  - text: "Let’s talk about how often you have felt satisfied with yourself over the past 2 months."
+
+  utter_question5:
+  - text: "Do you ever hear voices that others cannot? Or Do you get the sense that others are controlling your thoughts and emotions?"
+
+  utter_goodbye:
+  - text: "Thank you, I hope I was help full Bye for now"
+
+  
+
+
+
+session_config:
+  session_expiration_time: 8
+  carry_over_slots_to_new_session: true
